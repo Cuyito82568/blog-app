@@ -1,0 +1,50 @@
+.titulo-listado {
+  color: var(--color-primario);
+  font-weight: 700;
+  text-align: center;
+}
+
+.tarjeta {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-blanco);
+  transition: transform .2s ease, box-shadow .2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.imagen-post {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+.texto-resumen {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.btn-leer {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 8px 15px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .2s;
+}
+
+.btn-leer:hover {
+  background-color: var(--color-acento);
+  color: white;
+}
+
+

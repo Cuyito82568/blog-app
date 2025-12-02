@@ -1,0 +1,75 @@
+<div class="container py-4">
+  <div class="form-card mx-auto col-md-7 col-lg-6">
+    <h2 class="form-title">Nueva Publicación</h2>
+
+    <form #form="ngForm" (ngSubmit)="OnSubmit(form)">
+
+      <div class="mb-3">
+        <label>Título</label>
+        <input class="form-control" name="titulo"
+               [(ngModel)]="publicacion.titulo" required />
+      </div>
+
+      <div class="mb-3">
+        <label>Contenido</label>
+        <textarea class="form-control" name="contenido"
+                  [(ngModel)]="publicacion.contenido" rows="6" required></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label>Resumen</label>
+        <textarea class="form-control" name="resumen"
+                  [(ngModel)]="publicacion.resumen" rows="3" required></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label>Categoría</label>
+        <select class="form-select" name="categoria"
+                [(ngModel)]="publicacion.id_categoria" required>
+          <option value="" disabled selected>Selecciona una categoría</option>
+          <option *ngFor="let c of categorias" [value]="c.id_categoria">
+            {{ c.nombre }}
+          </option>
+        </select>
+        <small class="text-muted" *ngIf="categorias.length === 0">
+          Cargando categorías...
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <label>Autor</label>
+        <select class="form-select" name="usuario"
+                [(ngModel)]="publicacion.id_usuario" required>
+          <option value="" disabled selected>Selecciona un autor</option>
+          <option *ngFor="let u of usuarios" [value]="u.id_usuario">
+            {{ u.nombre }}
+          </option>
+        </select>
+        <small class="text-muted" *ngIf="usuarios.length === 0">
+          Cargando usuarios...
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <label>Imagen</label>
+        <input type="text" class="form-control"
+               placeholder="/assets/imagen.jpg"
+               name="imagen"
+               [(ngModel)]="publicacion.imagen" />
+      </div>
+
+      <div class="mb-3">
+        <label>Estado</label>
+        <select class="form-select" name="estado"
+                [(ngModel)]="publicacion.estado" required>
+          <option value="publicado">Publicado</option>
+          <option value="borrador">Borrador</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primario w-100">Publicar</button>
+
+    </form>
+  </div>
+</div>
+

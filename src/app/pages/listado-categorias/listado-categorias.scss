@@ -1,0 +1,41 @@
+.titulo-listado {
+  color: var(--color-primario);
+  font-weight: 700;
+  text-align: center;
+}
+
+.tarjeta {
+  border-radius: 12px;
+  background: var(--color-blanco);
+  overflow: hidden;
+  transition: transform .2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.icono-categoria {
+  font-size: 50px;
+  text-align: center;
+  padding-top: 20px;
+  color: var(--color-secundario);
+}
+
+.card-title {
+  color: var(--color-primario);
+  font-weight: bold;
+}
+
+.btn-primario {
+  background: var(--color-secundario);
+  color: var(--color-blanco);
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.btn-primario:hover {
+  background: var(--color-acento);
+  color: white;
+}

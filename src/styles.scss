@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primario: #0A1D37;
+  --color-secundario: #1F6F8B;
+  --color-gris: #E0E0E0;
+  --color-blanco: #FFFFFF;
+  --color-acento: #E85D04;
+}
+
+body {
+  background-color: var(--color-gris);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-card {
+  background: var(--color-blanco);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  border-left: 6px solid var(--color-secundario);
+}
+
+.form-title {
+  color: var(--color-primario);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.btn-primario {
+  background-color: var(--color-secundario);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: 0.3s;
+  color: var(--color-blanco);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-acento);
+}
+
+/* inputs */
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 12px;
+  border: 2px solid var(--color-gris);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 5px rgba(31,111,139,0.4);
+}
+
+.text-danger {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  transition: 0.3s ease;
+}
+
+.btn-volver i {
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+.btn-volver:hover {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  transform: translateX(-3px);
+}

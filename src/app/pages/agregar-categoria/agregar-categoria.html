@@ -1,0 +1,49 @@
+<div class="container py-4">
+  <div class="form-card mx-auto col-md-7 col-lg-6">
+
+    <h2 class="form-title">Nueva Categoría</h2>
+
+    <form #form="ngForm" (ngSubmit)="OnSubmit(form)">
+
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label>Nombre</label>
+        <input type="text"
+               class="form-control"
+               name="nombre"
+               [(ngModel)]="categoria.nombre"
+               required>
+      </div>
+
+      <!-- Descripción -->
+      <div class="mb-3">
+        <label>Descripción</label>
+        <textarea class="form-control"
+                  rows="3"
+                  name="descripcion"
+                  [(ngModel)]="categoria.descripcion"></textarea>
+      </div>
+
+      <!-- Estado -->
+      <div class="mb-3">
+        <label>Estado</label>
+        <select class="form-select"
+                name="estado"
+                [(ngModel)]="categoria.estado"
+                required>
+          <option value="" disabled selected>Selecciona...</option>
+          <option value="si">Activo</option>
+          <option value="no">Inactivo</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primario w-100 mt-2">
+        Guardar Categoría
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,40 @@
+<div class="container py-4">
+
+  <h2 class="titulo-listado mb-4">
+    Publicaciones de esta categoría
+  </h2>
+   <a (click)="volver()" class="btn-volver">
+    <i class="bi bi-arrow-left-circle"></i> Volver
+  </a>
+
+
+
+  <div class="row" *ngIf="publicaciones.length > 0; else noData">
+
+    <div class="col-md-4 mb-4" *ngFor="let p of publicaciones">
+      <div class="card tarjeta shadow-sm">
+        <img *ngIf="p.imagen" [src]="p.imagen" class="card-img-top imagen-post">
+
+        <div class="card-body">
+
+          <h5 class="card-title">{{ p.titulo }}</h5>
+          <p class="card-text">
+            {{ p.resumen || (p.contenido | slice:0:120) + '...' }}
+          </p>
+
+          <a [routerLink]="['/publicacion', p.id_publicacion]"
+             class="btn btn-leer">
+            Leer más
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template #noData>
+    <p class="text-center text-muted">No hay publicaciones en esta categoría.</p>
+  </ng-template>
+
+</div>

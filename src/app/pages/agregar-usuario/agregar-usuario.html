@@ -1,0 +1,72 @@
+<div class="container py-4">
+  <div class="form-card mx-auto col-md-7 col-lg-6">
+
+    <h2 class="form-title">Nuevo Usuario</h2>
+
+    <form #form="ngForm" (ngSubmit)="OnSubmit(form)">
+
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label>Nombre completo</label>
+        <input class="form-control"
+               name="nombre"
+               [(ngModel)]="usuario.nombre"
+               required />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label>Correo electrónico</label>
+        <input class="form-control"
+               type="email"
+               name="email"
+               [(ngModel)]="usuario.email"
+               required />
+      </div>
+
+      <!-- Contraseña -->
+      <div class="mb-3">
+        <label>Contraseña</label>
+        <input class="form-control"
+               type="password"
+               name="contrasena"
+               [(ngModel)]="usuario.contrasena"
+               minlength="6"
+               required />
+      </div>
+
+      <!-- Rol -->
+      <div class="mb-3">
+        <label>Rol</label>
+        <select class="form-select"
+                name="rol"
+                [(ngModel)]="usuario.rol"
+                required>
+          <option value="" disabled selected>Selecciona un rol</option>
+          <option value="admin">Administrador</option>
+          <option value="autor">Autor</option>
+          <option value="lector">Lector</option>
+        </select>
+      </div>
+
+      <!-- Estado -->
+      <div class="mb-3">
+        <label>Estado</label>
+        <select class="form-select"
+                name="estado"
+                [(ngModel)]="usuario.estado"
+                required>
+          <option value="" disabled selected>Selecciona un estado</option>
+          <option value="activo">Activo</option>
+          <option value="inactivo">Inactivo</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primario w-100">
+        Registrar Usuario
+      </button>
+
+    </form>
+
+  </div>
+</div>

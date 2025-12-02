@@ -1,0 +1,33 @@
+<div class="publicacion-container" *ngIf="publicacion">
+
+   <a (click)="volver()" class="btn-volver">
+    <i class="bi bi-arrow-left-circle"></i> Volver
+  </a>
+
+  <h1 class="titulo-publicacion">{{ publicacion.titulo }}</h1>
+
+  <!-- META -->
+  <div class="meta-publicacion">
+    <span><i class="bi bi-person-fill"></i> {{ usuarioNombre }}</span>
+    <span><i class="bi bi-folder-fill"></i> {{ categoriaNombre }}</span>
+    <span><i class="bi bi-calendar-date"></i> {{ publicacion.fecha | date:'MMMM d, yyyy' }}</span>
+  </div>
+
+  <!-- TARJETA -->
+  <div class="publicacion-card">
+    <img *ngIf="publicacion.imagen"
+         [src]="publicacion.imagen"
+         class="publicacion-img">
+
+    <p class="publicacion-contenido">
+      {{ publicacion.contenido }}
+    </p>
+  </div>
+
+</div>
+
+<div *ngIf="!publicacion" class="loading">
+  Cargando publicación...
+</div>
+
+

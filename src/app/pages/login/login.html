@@ -1,0 +1,34 @@
+<div class="container py-5">
+
+  <div class="form-card mx-auto col-md-6 col-lg-5">
+    <h2 class="form-title text-center">Acceder</h2>
+
+    <form #form="ngForm" (ngSubmit)="onLogin(form)">
+
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email"
+               name="email"
+               class="form-control"
+               [(ngModel)]="login.email"
+               required>
+      </div>
+
+      <div class="mb-3">
+        <label>Contraseña</label>
+        <input type="password"
+               name="contrasena"
+               class="form-control"
+               [(ngModel)]="login.contrasena"
+               required>
+      </div>
+
+      <button class="btn btn-primario w-100"
+              [disabled]="form.invalid">
+        Iniciar sesión
+      </button>
+
+    </form>
+  </div>
+
+</div>
